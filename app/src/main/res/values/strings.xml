@@ -6,4 +6,10 @@
     <string name="dummy_content">DUMMY\nCONTENT</string>
     <string name="informe_seu_nome">Informe seu nome</string>
     <string name="salvar">Salvar</string>
+    <string name="happy">happy</string>
+    <string name="sun">sun</string>
+    <string name="all">all</string>
+    <string name="phrase">Phrase</string>
+    <string name="nova_frase">Nova frase</string>
+    <string name="usu_rio">Usuário</string>
 </resources>

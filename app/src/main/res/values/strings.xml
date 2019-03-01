@@ -4,4 +4,6 @@
     <string name="title_activity_splash_screen">SplashActivity</string>
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="informe_seu_nome">Informe seu nome</string>
+    <string name="salvar">Salvar</string>
 </resources>

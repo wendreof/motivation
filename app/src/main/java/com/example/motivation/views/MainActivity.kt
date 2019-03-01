@@ -1,7 +1,8 @@
-package com.example.motivation
+package com.example.motivation.views
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import com.example.motivation.R
 
 class MainActivity : AppCompatActivity() {
 

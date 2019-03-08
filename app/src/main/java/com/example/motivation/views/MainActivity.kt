@@ -5,12 +5,13 @@ import android.os.Bundle
 import android.view.View
 import com.example.motivation.R
 import com.example.motivation.contants.MotivationConstants
+import com.example.motivation.mock.Mock
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
 
     private var mFilter: Int = MotivationConstants.PRHASE_FILTER.ALL
-
+    private val mMock = Mock()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,7 +27,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         val listId = listOf(R.id.imageAll, R.id.imageSun, R.id.imageHappy)
         if (id in listId) {
             handleFilter(id)
-        } else {
+        } else if (id == R.id.buttonNewPhrase){
             refreshPrase()
         }
     }
@@ -53,10 +54,9 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         }
     }
 
-
     private fun refreshPrase() {
+        textPhrase.text = mMock.getPrhase(mFilter)
     }
-
 
     private fun setListeners() {
         imageAll.setOnClickListener(this)

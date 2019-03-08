@@ -6,6 +6,6 @@
 
     <color name="black_overlay">#66000000</color>
 
-    <color name="menu_item_selected">#ffffff</color>
+    <color name="menu_item_selected">#DA0E0E</color>
     <color name="menu_item_unselected">#cecece</color>
 </resources>

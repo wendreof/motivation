@@ -6,20 +6,30 @@ import android.view.View
 import com.example.motivation.R
 import com.example.motivation.contants.MotivationConstants
 import com.example.motivation.mock.Mock
+import com.example.motivation.utils.SecurityPreferences
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
 
     private var mFilter: Int = MotivationConstants.PRHASE_FILTER.ALL
     private val mMock = Mock()
+    private lateinit var mSecurityPreferences: SecurityPreferences
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        mSecurityPreferences = SecurityPreferences(this)
+
         setListeners() //events
 
         handleFilter(R.id.imageAll) //initializing
+
+        verifyUserName()
+    }
+
+    private fun verifyUserName() {
+        textUserName.text = mSecurityPreferences.getStoredString(MotivationConstants.KEY.PERSON_NAME)
     }
 
     override fun onClick(view: View) {

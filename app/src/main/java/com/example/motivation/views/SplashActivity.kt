@@ -27,7 +27,11 @@ class SplashActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     private fun verifyUserName() {
-        editName.setText(mSecurity.getStoredString(MotivationConstants.KEY.PERSON_NAME))
+        val userName = mSecurity.getStoredString(MotivationConstants.KEY.PERSON_NAME)
+        if (userName != ""){
+            startActivity(Intent(this, MainActivity::class.java))
+        }
+        editName.setText(userName)
     }
 
     override fun onClick(view: View) {

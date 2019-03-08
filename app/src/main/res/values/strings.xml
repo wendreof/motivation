@@ -12,4 +12,5 @@
     <string name="phrase">Phrase</string>
     <string name="nova_frase">Nova frase</string>
     <string name="usu_rio">Usuário</string>
+    <string name="informe_nome">Por favor informe seu nome</string>
 </resources>

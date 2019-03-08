@@ -1,7 +1,9 @@
 package com.example.motivation.views
 
+import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.support.design.widget.Snackbar
 import android.view.View
 
 import com.example.motivation.R
@@ -19,12 +21,12 @@ class SplashActivity : AppCompatActivity(), View.OnClickListener {
 
         mSecurity = SecurityPreferences(this)
 
-        buttonSave.setOnClickListener( this)
+        buttonSave.setOnClickListener(this)
     }
 
     override fun onClick(view: View) {
         val id = view.id;
-        if ( id == R.id.buttonSave){
+        if (id == R.id.buttonSave) {
             handleSave()
 
         }
@@ -32,6 +34,18 @@ class SplashActivity : AppCompatActivity(), View.OnClickListener {
 
     private fun handleSave() {
         val name: String = editName.text.toString()
-        mSecurity.storeString(MotivationConstants.KEY.PERSON_NAME, name)
+
+        if (name == "") {
+            Snackbar.make(splashActivity, getString(R.string.informe_nome), Snackbar.LENGTH_LONG).show()
+        } else {
+            mSecurity.storeString(MotivationConstants.KEY.PERSON_NAME, name)
+
+            val intent: Intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+
+            //Impede a volta para essa activity!
+            //finish()
+        }
+
     }
 }

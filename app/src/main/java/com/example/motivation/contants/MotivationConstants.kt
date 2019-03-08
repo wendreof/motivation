@@ -6,4 +6,10 @@ class MotivationConstants private constructor(){
         val PERSON_NAME = "personName"
     }
 
+    object PRHASE_FILTER{
+        val ALL =1
+        val SUN =2
+        val HAPPY =3
+    }
+
 }
